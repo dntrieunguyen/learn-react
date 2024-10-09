@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointUp } from '@fortawesome/free-regular-svg-icons';
 import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
 const CountComponent = () => {
+   const [count, setCount] = useState(0);
+
+   const plus = e => {
+      setCount(count => count + 1);
+   };
+   const minus = e => {
+      setCount(count => count - 1);
+   };
+
+   const reset = e => {
+      setCount(0);
+   };
+
    return (
       <>
          <div className="main">
@@ -15,17 +28,19 @@ const CountComponent = () => {
             </div>
             <div className="container">
                <div className="number-container">
-                  <span className="number">0</span>
+                  <span className="number">{count}</span>
                </div>
                <div className="control-wrapper">
                   <div className="plus-btn">
-                     <button>+</button>
+                     <button onClick={e => plus(e)}>+</button>
                   </div>
                   <div className="reset-btn">
-                     <button><FontAwesomeIcon icon={faRotate} /></button>
+                     <button onClick={e => reset(e)}>
+                        <FontAwesomeIcon icon={faRotate} />
+                     </button>
                   </div>
                   <div className="minus-btn">
-                     <button>-</button>
+                     <button onClick={e => minus(e)}>-</button>
                   </div>
                </div>
             </div>
