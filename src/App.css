@@ -1,3 +1,9 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
 .App {
    text-align: center;
 }
@@ -35,4 +41,114 @@
    to {
       transform: rotate(360deg);
    }
+}
+
+header {
+   display: flex;
+   justify-content: space-between;
+   padding: 5px 10px;
+   padding: 15px 0;
+   width: 100%;
+   border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.header-left {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.header-left ul {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.header-left ul > li {
+   cursor: pointer;
+   padding-bottom: 20px;
+   color: gray;
+}
+
+.header-left ul > li:last-child {
+   color: black;
+}
+
+.isActive {
+   color: blue !important;
+   padding-bottom: 20px;
+   border-bottom: 1px solid blue;
+}
+
+.container {
+   display: flex;
+   justify-content: space-between;
+}
+
+.form-container {
+   flex: 1;
+}
+
+.logo {
+   flex: 2;
+}
+
+.form-items {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   margin-bottom: 10px;
+   width: 100%;
+}
+
+.password-input {
+   position: relative;
+   width: 100%;
+}
+
+.icon-display-password {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 10px;
+}
+
+.form-items > input,
+.password-input > input {
+   width: 100%;
+   height: 40px;
+   padding: 5px;
+}
+
+.form-items label {
+   display: flex;
+   font-size: small;
+   justify-content: flex-start;
+}
+
+label .required {
+   color: red;
+}
+
+.form-title {
+}
+
+.form-group {
+   padding: 10px;
+}
+
+.form-title {
+}
+
+.action {
+   display: flex;
+   justify-content: flex-start;
+   gap: 10px;
+   margin-top: 30px;
+}
+
+input {
+   outline: none;
 }
